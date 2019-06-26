@@ -1,6 +1,7 @@
-package benben;
+package com.benben;
 
 public class Chance {
+    private static double FULL_PROBABILITY = 1;
     private double fraction;
 
     public Chance(double fraction) {
@@ -12,15 +13,16 @@ public class Chance {
     }
 
     public Chance not() {
-        return new Chance(1 - this.getFraction());
+        return new Chance(FULL_PROBABILITY - this.fraction);
     }
 
     public Chance and(Chance chance) {
-        double resultFraction = chance.getFraction() * this.getFraction();
+        double resultFraction = chance.getFraction() * this.fraction;
         return new Chance(resultFraction);
     }
 
     public Chance or(Chance chance) {
-        return this.and(chance).not();
+        double fraction = this.and(chance.not()).getFraction() + chance.and(this.not()).getFraction();
+        return new Chance(fraction);
     }
 }

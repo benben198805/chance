@@ -1,4 +1,4 @@
-package benben;
+package com.benben;
 
 import org.junit.Test;
 
@@ -41,6 +41,6 @@ public class ChanceTest {
         Chance result = chanceA.or(chanceB);
 
         // then
-        assertEquals(result.getFraction(), new Chance(0.91).getFraction(), 0.00);
+        assertEquals(result.getFraction(), new Chance(0.42).getFraction(), 0.00);
     }
 }

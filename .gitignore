@@ -104,7 +104,6 @@ gradle/wrapper/gradle-wrapper.properties
 **/build/
 
 # End of https://www.gitignore.io/api/gradle,intellij
-build.gradle
 chance.iml
 chance.ipr
 gradle/wrapper/gradle-wrapper.jar

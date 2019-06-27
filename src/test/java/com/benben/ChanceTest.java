@@ -15,7 +15,7 @@ public class ChanceTest {
         Chance result = chance.not();
 
         // then
-        assertEquals(result.getFraction(), new Chance(0.7).getFraction(), 0.00);
+        assertEquals(result, new Chance(0.7));
     }
 
     @Test
@@ -28,7 +28,7 @@ public class ChanceTest {
         Chance result = chanceA.and(chanceB);
 
         // then
-        assertEquals(result.getFraction(), new Chance(0.09).getFraction(), 0.00);
+        assertEquals(result, new Chance(0.9));
     }
 
     @Test
@@ -41,6 +41,6 @@ public class ChanceTest {
         Chance result = chanceA.or(chanceB);
 
         // then
-        assertEquals(result.getFraction(), new Chance(0.42).getFraction(), 0.00);
+        assertEquals(result, new Chance(0.42));
     }
 }

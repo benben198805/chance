@@ -8,10 +8,6 @@ public class Chance {
         this.fraction = fraction;
     }
 
-    public double getFraction() {
-        return fraction;
-    }
-
     public Chance not() {
         return new Chance(FULL_PROBABILITY - this.fraction);
     }

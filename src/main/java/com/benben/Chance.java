@@ -20,4 +20,9 @@ public class Chance {
         double fraction = this.and(chance.not()).fraction + chance.and(this.not()).fraction;
         return new Chance(fraction);
     }
+
+    @Override
+    public String toString() {
+        return String.valueOf(fraction);
+    }
 }

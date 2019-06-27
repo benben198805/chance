@@ -15,7 +15,7 @@ public class ChanceTest {
         Chance result = chance.not();
 
         // then
-        assertEquals(result, new Chance(0.7));
+        assertEquals(result.toString(), new Chance(0.7).toString());
     }
 
     @Test
@@ -28,7 +28,7 @@ public class ChanceTest {
         Chance result = chanceA.and(chanceB);
 
         // then
-        assertEquals(result, new Chance(0.9));
+        assertEquals(result.toString(), new Chance(0.09).toString());
     }
 
     @Test
@@ -41,6 +41,6 @@ public class ChanceTest {
         Chance result = chanceA.or(chanceB);
 
         // then
-        assertEquals(result, new Chance(0.42));
+        assertEquals(result.toString(), new Chance(0.42).toString());
     }
 }

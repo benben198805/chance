@@ -17,12 +17,11 @@ public class Chance {
     }
 
     public Chance and(Chance chance) {
-        double resultFraction = chance.getFraction() * this.fraction;
-        return new Chance(resultFraction);
+        return new Chance(chance.fraction * this.fraction);
     }
 
     public Chance or(Chance chance) {
-        double fraction = this.and(chance.not()).getFraction() + chance.and(this.not()).getFraction();
+        double fraction = this.and(chance.not()).fraction + chance.and(this.not()).fraction;
         return new Chance(fraction);
     }
 }
